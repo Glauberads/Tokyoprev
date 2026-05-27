@@ -191,8 +191,17 @@
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
     }
+    .nav-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      /* logo é amarela — funciona bem em fundo escuro */
+      filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
+      transition: opacity var(--transition);
+    }
+    .nav-logo:hover .nav-logo-img { opacity: 0.85; }
+    /* mantém compatibilidade caso o span ainda exista */
     .nav-logo-text {
       font-size: 1.4rem;
       font-weight: 900;
@@ -1099,8 +1108,7 @@
     <div class="container">
       <div class="nav-inner">
         <a href="#hero" class="nav-logo" aria-label="Tokyoprev - página inicial">
-          <span class="nav-logo-text">TOKYO<span>PREV</span></span>
-          <span class="nav-logo-badge">SC</span>
+          <img src="logotipo Tokyoprev.png" alt="Tokyoprev Proteção Veicular" class="nav-logo-img" />
         </a>
         <ul class="nav-links" role="list">
           <li><a href="#quem-somos">Quem Somos</a></li>
@@ -1118,6 +1126,9 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menu mobile">
+    <div style="padding-bottom:1rem;margin-bottom:0.5rem;border-bottom:1px solid rgba(255,255,255,0.08);">
+      <img src="logotipo Tokyoprev.png" alt="Tokyoprev" style="height:52px;width:auto;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.4));" />
+    </div>
     <a href="#quem-somos" class="mobile-link">Quem Somos</a>
     <a href="#coberturas" class="mobile-link">Benefícios</a>
     <a href="#como-funciona" class="mobile-link">Como Funciona</a>
@@ -1609,7 +1620,7 @@
       <div class="footer-grid">
 
         <div class="footer-brand">
-          <span class="nav-logo-text">TOKYO<span>PREV</span></span>
+          <img src="logotipo Tokyoprev.png" alt="Tokyoprev Proteção Veicular" style="height:72px;width:auto;object-fit:contain;margin-bottom:1rem;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.5));" />
           <p class="footer-slogan">
             Proteção veicular acessível, sem burocracia e sem SPC/Serasa. Atendendo Santa Catarina e outros estados há mais de 9 anos.
           </p>
